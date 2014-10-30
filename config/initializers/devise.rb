@@ -228,6 +228,10 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+  require 'devise/orm/active_record'
+
+  config.sign_out_via = :get
+  config.omniauth :facebook, APP_CONFIG["FACEBOOK_KEY"], APP_CONFIG["FACEBOOK_SECRET"], { :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

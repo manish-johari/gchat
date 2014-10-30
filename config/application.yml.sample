@@ -1,0 +1,3 @@
+defaults: &defaults
+  :FACEBOOK_KEY: ""
+  :FACEBOOK_SECRET: ""

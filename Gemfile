@@ -39,3 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise', '~>  3.4.1'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'koala'
