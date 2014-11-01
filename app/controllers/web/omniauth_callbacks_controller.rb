@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Web::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     skip_before_filter :authenticate_user!
     def all
