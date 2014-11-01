@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
        user.password = Devise.friendly_token[0,10]
        user.name = auth.info.name
        user.email = auth.info.email
+       user.skip_confirmation! # skip confirmation through email during signup via facebook.
        auth.provider == "twitter" ?  user.save(:validate => false) :  user.save
      end
      authorization.username = auth.info.nickname
