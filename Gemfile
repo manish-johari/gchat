@@ -38,4 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise'
+gem 'devise', '~> 3.4.1'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'koala'
+gem 'paperclip', '~> 4.2.0'
+gem 'pry-byebug', group: [:development, :test]
+gem "bing_translator", "~> 4.4.0"
