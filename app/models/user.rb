@@ -26,4 +26,15 @@ class User < ActiveRecord::Base
     end
     authorization.user
   end
+
+  def set_deactive
+    self.is_active = false
+    self.save!
+  end
+
+  def set_active
+    self.is_active = true
+    self.save!
+  end
+
 end

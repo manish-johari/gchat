@@ -8,6 +8,19 @@ Rails.application.routes.draw do
       get 'edit_profile', to: 'profile#edit'
       get 'profile', to: 'profile#index'
     end
+    resources :settings, only: [:index]
+    get 'deactivate' => "profile#deactivate"
+  end
+
+  namespace :api, defaults: {format: 'json'} do
+    # devise_for :users, controllers: { sessions: "api/sessions" }
+    devise_scope :user do
+      post 'users/sign_in' => 'sessions#create'
+      get 'user/sign_out' => 'sessions#destroy'
+      post 'user/password' => 'passwords#create'
+      put 'user/password' => 'passwords#update'
+    end
+
   end
 
 end

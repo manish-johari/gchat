@@ -45,3 +45,4 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'paperclip', '~> 4.2.0'
 gem 'pry-byebug', group: [:development, :test]
+gem "bing_translator", "~> 4.4.0"
