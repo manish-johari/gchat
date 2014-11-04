@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post 'user/password' => 'passwords#create'
       put 'user/password' => 'passwords#update'
     end
+    post 'deactivate' => 'profile#deactivate'
 
   end
 

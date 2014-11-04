@@ -9,7 +9,7 @@ class Web::ProfileController < ApplicationController
   def deactivate
     # deactivate current_user
     begin
-      current_user.set_deative
+      current_user.set_deactive
       Devise.sign_out_all_scopes ? sign_out : sign_out(current_user) unless current_user.blank?
       flash[:notice] = t(:deactivate)
       redirect_to root_path

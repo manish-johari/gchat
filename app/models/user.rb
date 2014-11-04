@@ -37,4 +37,9 @@ class User < ActiveRecord::Base
     self.save!
   end
 
+  def is_deactive?
+    # return true if user is not active (is_active: false)
+    !is_active
+  end
+
 end
