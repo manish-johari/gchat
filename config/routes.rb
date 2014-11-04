@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get 'user/sign_out' => 'sessions#destroy'
       post 'user/password' => 'passwords#create'
       put 'user/password' => 'passwords#update'
+      post 'users/confirmation' => 'confirmations#create'
     end
     post 'deactivate' => 'profile#deactivate'
 
