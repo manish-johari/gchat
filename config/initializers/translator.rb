@@ -1,0 +1,1 @@
+Translator = BingTranslator.new(APP_CONFIG[:BING_CLIENT_ID],APP_CONFIG[:BING_CLIENT_SECRET],false,APP_CONFIG[:BING_KEY])
