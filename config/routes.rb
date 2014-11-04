@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'edit_profile', to: 'profile#edit'
       get 'profile', to: 'profile#index'
     end
+    resources :settings, only: [:index]
+    get 'deactivate' => "profile#deactivate"
   end
 
   namespace :api, defaults: {format: 'json'} do
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
       post 'user/password' => 'passwords#create'
       put 'user/password' => 'passwords#update'
     end
+    post 'deactivate' => 'profile#deactivate'
 
   end
 
