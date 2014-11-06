@@ -13,15 +13,17 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: {format: 'json'} do
-    devise_scope :user do
-      post 'users/sign_in' => 'sessions#create'
-      get 'users/sign_out' => 'sessions#destroy'
-      post 'users/password' => 'passwords#create'
-      put 'users/password' => 'passwords#update'
-      post 'users/sign_up' => 'registrations#create'
-      post 'users/confirmation' => 'confirmations#create'
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      devise_scope :user do
+        post 'users/sign_in' => 'sessions#create'
+        get 'users/sign_out' => 'sessions#destroy'
+        post 'users/password' => 'passwords#create'
+        put 'users/password' => 'passwords#update'
+        post 'users/sign_up' => 'registrations#create'
+        post 'users/confirmation' => 'confirmations#create'
+      end
+      post 'deactivate' => 'profile#deactivate'
     end
-    post 'deactivate' => 'profile#deactivate'
 
   end
 

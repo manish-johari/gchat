@@ -1,6 +1,6 @@
-class Api::SessionsController < Devise::SessionsController
+class Api::V1::SessionsController < Devise::SessionsController
   skip_before_filter :verify_authenticity_token, :only => :create
-  
+
   def create
     self.resource =  warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
 
