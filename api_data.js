@@ -219,7 +219,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"status\": \"true\"\n}\n"
+          "content": "{\n\"success\": true,\n\"user\": {\"id\": 2, \"email\":\"manish.johari@kiwitech.com\", \"is_active\": true}\n}"
         }
       ]
     },
