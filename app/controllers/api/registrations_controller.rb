@@ -17,7 +17,7 @@ class Api::RegistrationsController < Devise::RegistrationsController
     else
       respond_to do |format|
         format.json {
-              render :json => { :error => true, :error => resource.errors.full_messages.join(', ') }
+              render :json => { :error => true, :status => resource.errors.full_messages.join(', ') }
             }
       end
     end

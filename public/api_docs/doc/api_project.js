@@ -1,5 +1,5 @@
 define({
-  "name": "GlobeChat APIDOC",
+  "name": "APIDOC",
   "version": "0.1.0",
   "description": "Documentation for RESTful web APIs<br /><div class='pull-left'><h4>Base URL- http://domain.com/api </h4></div>",
   "apidoc": "",
