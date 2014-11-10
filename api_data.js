@@ -39,7 +39,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (200):",
-          "content": "{\n\"user_id\":  2, \"is_active\": false\n}"
+          "content": "{\n\t\"user_id\":  2, \n\t\"is_active\": false\n}"
         }
       ]
     },
@@ -47,7 +47,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error (400):",
-          "content": "{\n \"email\": [\"Email has already been taken.\"]\n}\n"
+          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": [\"Email has already been taken.\"]\n\t}\n}"
         }
       ]
     },
@@ -136,7 +136,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (200):",
-          "content": "{\n \"user_id\": 1, \"auth_token\": \"xyzabc\",  \"is_active\": true \n}\n"
+          "content": "{\n\t \"user_id\": 1, \n\t\"auth_token\": \"xyzabc\",  \n\t\"is_active\": true \n}\n"
         }
       ]
     },
@@ -144,11 +144,11 @@ define({ api: [
       "examples": [
         {
           "title": "Error (400): Invalid gender",
-          "content": "{\n \"gender\": [\"Invalid.\"]\n}\n"
+          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": [\"Invalid.\"]\n\t}\n}\n"
         },
         {
           "title": "Error (400): Invalid mobile",
-          "content": "{\n \"mobile\": [\"Invalid.\"]\n}\n"
+          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"mobile\": [\"Invalid.\"]\n\t}\n}\n"
         }
       ]
     },
@@ -179,7 +179,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n \"message\": \"ok\"\n}\n"
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
         }
       ]
     },
@@ -210,7 +210,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n \"message\": \"ok\"\n}\n"
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
         }
       ]
     },
@@ -241,7 +241,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n \"message\": \"ok\"\n}\n"
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
         }
       ]
     },
@@ -249,7 +249,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (400):",
-          "content": "{\n \"verification_code\": [\"verification code is not valid.\"]\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
         }
       ]
     },
@@ -288,7 +288,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (400):",
-          "content": "{\n \"verification_code\": \"verification code is not valid.\"\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
         }
       ]
     },
