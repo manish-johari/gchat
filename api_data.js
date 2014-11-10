@@ -6,7 +6,7 @@ define({ api: [
     "title": "sign_up",
     "name": "Create_Account",
     "description": "API will create a user account.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.0",
     "parameter": {
       "fields": {
@@ -38,106 +38,28 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
-          "content": "{\n\"success\": true,\n\"user\": {\"id\": 2, \"email\":\"manish.johari@kiwitech.com\", \"is_active\": false}\n}"
+          "title": "Success (200):",
+          "content": "{\n\"user_id\":  2, \"is_active\": false\n}"
         }
       ]
     },
     "error": {
       "examples": [
         {
-          "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"Email has already been taken.\"\n}\n"
-        }
-      ]
-    },
-  },
-  
-  {
-    "type": "get",
-    "url": "/user/sign_out",
-    "title": "Logout",
-    "name": "User_Logout",
-    "description": "API will logout the user.",
-    "group": "User",
-    "version": "0.1.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "auth_token",
-            "optional": false,
-            "description": "Provide the authentication token"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"status\": \"logged out\"\n}\n"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"User not logged out. Authentication token is not valid.\"\n}\n"
+          "title": "Error (400):",
+          "content": "{\n \"email\": [\"Email has already been taken.\"]\n}\n"
         }
       ]
     },
   },
 
   {
-    "type": "get",
-    "url": "/user/sign_out",
-    "title": "Logout",
-    "name": "User_Logout",
-    "description": "API will logout the user.",
-    "group": "User",
-    "version": "0.1.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "auth_token",
-            "optional": false,
-            "description": "Provide the authentication token"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"status\": \"logged out\"\n}\n"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"User not logged out. Authentication token is not valid.\"\n}\n"
-        }
-      ]
-    },
-  },
-
- {
     "type": "post",
-    "url": "/user/sign_in",
-    "title": "Login From Facebook",
+    "url": "/users/sign_in",
+    "title": "Connect with facebook",
     "name": "User_Login_From_Facebook",
     "description": "API will login the user from facebook.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.0",
     "parameter": {
       "fields": {
@@ -147,31 +69,108 @@ define({ api: [
             "type": "String",
             "field": "fb_user_id",
             "optional": false,
-            "description": "Provide the fb_user_id"
+            "description": "<p>Social Network ID via which user is connected.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "provider",
-            "defaultValue": "facebook",
-            "optional": true,
-            "description": ""
+            "optional": false,
+            "description": "<p>Social Network via which user is connected.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "fb_access_token",
             "optional": false,
-            "description": "Provide the facebook access token"
-          }
-        ],
-        "These parameters should be in user key:": [
+            "description": "<p>Provide the facebook access token</p>"
+          },
           {
-            "group": "user",
+            "group": "Parameter",
             "type": "String",
             "field": "email",
             "optional": false,
-            "description": "Provide the user email\n<p> ex : {\"user\"=>{\"email\"=>\"example@kiwitech.com\"}}</p>"
+            "description": "<p>User's email id fetched from fb.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "first_name",
+            "optional": false,
+            "description": "<p>First Name of user fetched from FB.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "last_name",
+            "optional": false,
+            "description": "<p>Name of user fetched from FB.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "birthdate",
+            "optional": false,
+            "description": "<p>Format YYYY-MM-DD</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "gender",
+            "optional": false,
+            "description": "<p>Allowed value m/f</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "mobile",
+            "optional": false,
+            "description": "<p>Provide Mobile number.</p>"
+          }
+
+
+        ],
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success (200):",
+          "content": "{\n \"user_id\": 1, \"auth_token\": \"xyzabc\",  \"is_active\": true \n}\n"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error (400): Invalid gender",
+          "content": "{\n \"gender\": [\"Invalid.\"]\n}\n"
+        },
+        {
+          "title": "Error (400): Invalid mobile",
+          "content": "{\n \"mobile\": [\"Invalid.\"]\n}\n"
+        }
+      ]
+    },
+  },
+
+  {
+    "type": "get",
+    "url": "/user/sign_out",
+    "title": "Logout",
+    "name": "User_Logout",
+    "description": "API will logout the user.",
+    "group": "User",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the authentication token"
           }
         ]
       }
@@ -180,7 +179,38 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"user\":\n   {\n     \"id\": 1,\n     \"first_name\": \"manish\",\n     \"last_name\": \"johari\",\n     \"email\": \"example@kiwitech.com\",\n     \"fb_user_id\": \"100005731151579\"   }\n}\n"
+          "content": "{\n \"message\": \"ok\"\n}\n"
+        }
+      ]
+    },
+  },
+
+  {
+    "type": "get",
+    "url": "/user/sign_out",
+    "title": "Logout",
+    "name": "User_Logout",
+    "description": "API will logout the user.",
+    "group": "User",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the authentication token"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"status\": \"logged out\"\n}\n"
         }
       ]
     },
@@ -188,7 +218,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"The email and password you've entered do not match.\"\n}\n"
+          "content": "{\n \"status\": \"User not logged out. Authentication token is not valid.\"\n}\n"
         }
       ]
     },
@@ -219,15 +249,15 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\"success\": true,\n\"user\": {\"id\": 2, \"email\":\"manish.johari@kiwitech.com\", \"is_active\": true}\n}"
+          "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
     },
     "error": {
       "examples": [
         {
-          "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"verification code is not valid.\"\n}\n"
+          "title": "Error-Response (400):",
+          "content": "{\n \"verification_code\": [\"verification code is not valid.\"]\n}\n"
         }
       ]
     },
@@ -258,7 +288,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"status\": \"true\"\n}\n"
+          "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
     },
@@ -266,7 +296,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "{\n \"errors\": true,\n \"status\": \"verification code is not valid.\"\n}\n"
+          "content": "{\n \"verification_code\": \"verification code is not valid.\"\n}\n"
         }
       ]
     },
