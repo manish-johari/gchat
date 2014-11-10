@@ -178,7 +178,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
+          "title": "Success-Response (200):",
           "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
@@ -192,7 +192,7 @@ define({ api: [
     "name": "User_Logout",
     "description": "API will logout the user.",
     "group": "User",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -209,16 +209,8 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
-          "content": "{\n \"status\": \"logged out\"\n}\n"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "{\n \"status\": \"User not logged out. Authentication token is not valid.\"\n}\n"
+          "title": "Success-Response (200):",
+          "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
     },
@@ -248,7 +240,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
+          "title": "Success-Response (200):",
           "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
@@ -287,7 +279,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response:",
+          "title": "Success-Response (200):",
           "content": "{\n \"message\": \"ok\"\n}\n"
         }
       ]
@@ -295,7 +287,7 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error-Response:",
+          "title": "Error-Response (400):",
           "content": "{\n \"verification_code\": \"verification code is not valid.\"\n}\n"
         }
       ]
