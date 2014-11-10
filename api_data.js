@@ -38,7 +38,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success (200):",
+          "title": "Success (201):",
           "content": "{\n\t\"user_id\":  2, \n\t\"is_active\": false\n}"
         }
       ]
@@ -46,7 +46,7 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error (400):",
+          "title": "Error (409):",
           "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": [\"Email has already been taken.\"]\n\t}\n}"
         }
       ]
@@ -135,7 +135,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success (200):",
+          "title": "Success (201):",
           "content": "{\n\t \"user_id\": 1, \n\t\"auth_token\": \"xyzabc\",  \n\t\"is_active\": true \n}\n"
         }
       ]
@@ -155,12 +155,12 @@ define({ api: [
   },
 
   {
-    "type": "get",
-    "url": "/user/sign_out",
+    "type": "delete",
+    "url": "/users/sign_out",
     "title": "Logout",
     "name": "User_Logout",
     "description": "API will logout the user.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.0",
     "parameter": {
       "fields": {
@@ -186,12 +186,12 @@ define({ api: [
   },
 
   {
-    "type": "get",
-    "url": "/user/sign_out",
+    "type": "delete",
+    "url": "/users/sign_out",
     "title": "Logout",
     "name": "User_Logout",
     "description": "API will logout the user.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.1",
     "parameter": {
       "fields": {
@@ -222,7 +222,7 @@ define({ api: [
     "title": "Code verification",
     "name": "Code_Verification",
     "description": "API will verify the Verification_Code.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.0",
     "parameter": {
       "fields": {
@@ -248,7 +248,7 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error-Response (400):",
+          "title": "Error-Response (422):",
           "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
         }
       ]
@@ -257,11 +257,11 @@ define({ api: [
 
   {
     "type": "post",
-    "url": "/user/verify_code",
+    "url": "/users/verify_code",
     "title": "Code verification",
     "name": "Code_Verification",
     "description": "API will verify the Verification_Code.",
-    "group": "User",
+    "group": "Login",
     "version": "0.1.1",
     "parameter": {
       "fields": {
@@ -287,7 +287,7 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error-Response (400):",
+          "title": "Error-Response (422):",
           "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
         }
       ]
