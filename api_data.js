@@ -143,11 +143,11 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error (400): Invalid gender",
-          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": [\"Invalid.\"]\n\t}\n}\n"
+          "title": "Error (422): Invalid gender and Invaid Mobile",
+          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": [\"Invalid.\"], \n\t\t \"mobile\": [\"Invalid.\"] \n\t}\n}\n"
         },
         {
-          "title": "Error (400): Invalid mobile",
+          "title": "Error (422): Invalid mobile",
           "content": "{\n\t\"errors\": \n\t{ \n\t\t \"mobile\": [\"Invalid.\"]\n\t}\n}\n"
         }
       ]
