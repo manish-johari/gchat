@@ -76,6 +76,7 @@ define({ api: [
             "type": "String",
             "field": "provider",
             "optional": false,
+            "defaultValue": "facebook",
             "description": "<p>Social Network via which user is connected.</p>"
           },
           {
@@ -89,42 +90,42 @@ define({ api: [
             "group": "Parameter",
             "type": "String",
             "field": "email",
-            "optional": false,
+            "optional": true,
             "description": "<p>User's email id fetched from fb.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "first_name",
-            "optional": false,
+            "optional": true,
             "description": "<p>First Name of user fetched from FB.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "last_name",
-            "optional": false,
+            "optional": true,
             "description": "<p>Name of user fetched from FB.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "birthdate",
-            "optional": false,
+            "optional": true,
             "description": "<p>Format YYYY-MM-DD</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "gender",
-            "optional": false,
+            "optional": true,
             "description": "<p>Allowed value m/f</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "mobile",
-            "optional": false,
+            "optional": true,
             "description": "<p>Provide Mobile number.</p>"
           }
 
