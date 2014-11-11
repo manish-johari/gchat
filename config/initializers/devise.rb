@@ -230,8 +230,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
   require 'devise/orm/active_record'
 
-  config.sign_out_via = :get
-  config.omniauth :facebook, APP_CONFIG[:FACEBOOK_KEY], APP_CONFIG[:FACEBOOK_SECRET], { :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :facebook, APP_CONFIG[:FACEBOOK_KEY], APP_CONFIG[:FACEBOOK_SECRET], { :scope => 'email, offline_access'}
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
@@ -260,4 +259,8 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  config.warden do |manager|
+    manager.failure_app = CustomFailureApp
+  end
 end

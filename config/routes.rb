@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       devise_scope :user do
         post 'users/sign_in' => 'sessions#create'
-        get 'users/sign_out' => 'sessions#destroy'
+        delete 'users/sign_out' => 'sessions#destroy'
         post 'users/password' => 'passwords#create'
         put 'users/password' => 'passwords#update'
         post 'users/sign_up' => 'registrations#create'
