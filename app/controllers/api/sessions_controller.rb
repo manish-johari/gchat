@@ -1,14 +1,8 @@
 class Api::SessionsController < Devise::SessionsController
-  skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_filter :verify_authenticity_token, :only => [:create, :destroy]
   
   def create
-    self.resource =  warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
-
-    respond_to do |format|
-      format.json {
-            render :json => { :success => true, :user => current_user }
-          }
-    end
+    self.resource = warden.authenticate!(auth_options)
   end
 
   def destroy

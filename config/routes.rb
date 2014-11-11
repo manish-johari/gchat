@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     devise_scope :user do
       post 'users/sign_in' => 'sessions#create'
-      get 'users/sign_out' => 'sessions#destroy'
+      delete 'users/sign_out' => 'sessions#destroy'
       post 'users/password' => 'passwords#create'
       put 'users/password' => 'passwords#update'
       post 'users/sign_up' => 'registrations#create'
