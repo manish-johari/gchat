@@ -24,13 +24,6 @@ define({ api: [
             "field": "password",
             "optional": false,
             "description": "Provide the Password."
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "password_confirmation",
-            "optional": false,
-            "description": "Provide the Password again."
           }
         ]
         }
@@ -39,7 +32,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\":  2, \n\t\"is_active\": false\n}"
+          "content": "{\n\t\"user_id\":  2,  \n\t\"auth_token\": \"xyzabc\", \n\t\"is_active\": false\n}"
         }
       ]
     },
@@ -47,7 +40,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error (409):",
-          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": [\"Email has already been taken.\"]\n\t}\n}"
+          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": \"Email has already been taken.\", \n\t\t\"errors\": \"Email has already been taken.\" \n\t}\n}"
         }
       ]
     },
@@ -86,50 +79,6 @@ define({ api: [
             "optional": false,
             "description": "<p>Provide the facebook access token</p>"
           },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "email",
-            "optional": true,
-            "description": "<p>User's email id fetched from fb.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "first_name",
-            "optional": true,
-            "description": "<p>First Name of user fetched from FB.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "last_name",
-            "optional": true,
-            "description": "<p>Name of user fetched from FB.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "birthdate",
-            "optional": true,
-            "description": "<p>Format YYYY-MM-DD</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "gender",
-            "optional": true,
-            "description": "<p>Allowed value m/f</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "mobile",
-            "optional": true,
-            "description": "<p>Provide Mobile number.</p>"
-          }
-
-
         ],
       }
     },
@@ -137,7 +86,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t \"user_id\": 1, \n\t\"auth_token\": \"xyzabc\",  \n\t\"is_active\": true \n}\n"
+          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\",  \n\t\"is_active\": true \n}\n"
         }
       ]
     },
@@ -145,11 +94,11 @@ define({ api: [
       "examples": [
         {
           "title": "Error (422): Invalid gender and Invaid Mobile",
-          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": [\"Invalid.\"], \n\t\t \"mobile\": [\"Invalid.\"] \n\t}\n}\n"
+          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": \"Gender is invalid.\", \n\t\t \"mobile\": \"Mobile number is invalid.\",\n\t\t\"errors\": \"Gender is invalid and Mobile number is invalid.\"\n\t}\n}\n"
         },
         {
           "title": "Error (422): Invalid mobile",
-          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"mobile\": [\"Invalid.\"]\n\t}\n}\n"
+          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"mobile\": \"Mobile number is invalid.\",\n\t\t\"errors\": \"Mobile number is invalid.\"\n\t}\n}\n"
         }
       ]
     },
@@ -250,7 +199,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (422):",
-          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"verification_code\": \"verification code is not valid.\", \n\t\t\t\"errors\": \"verification code is not valid.\"\n\t\t}\n}\n"
         }
       ]
     },
@@ -289,7 +238,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (422):",
-          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": [\"verification code is not valid.\"]\n\t\t}\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": \"verification code is not valid.\"\n\t\t}\n}\n"
         }
       ]
     },
