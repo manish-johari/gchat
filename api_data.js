@@ -14,14 +14,14 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "email",
+            "field": "user[email]",
             "optional": false,
             "description": "Provide the Email."
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "password",
+            "field": "user[password]",
             "optional": false,
             "description": "Provide the Password."
           }
@@ -32,7 +32,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\":  2,  \n\t\"auth_token\": \"xyzabc\", \n\t\"is_active\": false\n}"
+          "content": "{\n\t\"user_id\":  2,  \n\t\"auth_token\": \"xyzabc\", \n\t \"is_confirmed\": false\n}"
         }
       ]
     },
@@ -86,19 +86,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\",  \n\t\"is_active\": true \n}\n"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error (422): Invalid gender and Invaid Mobile",
-          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"gender\": \"Gender is invalid.\", \n\t\t \"mobile\": \"Mobile number is invalid.\",\n\t\t\"errors\": \"Gender is invalid and Mobile number is invalid.\"\n\t}\n}\n"
-        },
-        {
-          "title": "Error (422): Invalid mobile",
-          "content": "{\n\t\"errors\": \n\t{ \n\t\t \"mobile\": \"Mobile number is invalid.\",\n\t\t\"errors\": \"Mobile number is invalid.\"\n\t}\n}\n"
+          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true\n}\n"
         }
       ]
     },
@@ -168,10 +156,10 @@ define({ api: [
 
   {
     "type": "post",
-    "url": "/user/verify_code",
-    "title": "Code verification",
-    "name": "Code_Verification",
-    "description": "API will verify the Verification_Code.",
+    "url": "/users/confirm_token",
+    "title": "Confirm token",
+    "name": "Confirm_Token",
+    "description": "API will verify the confirmation token.",
     "group": "Login",
     "version": "0.1.0",
     "parameter": {
@@ -180,9 +168,9 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "verification_code",
+            "field": "confirmation_token",
             "optional": false,
-            "description": "Provide the verification code"
+            "description": "Provide the confirmation_token sent to user via email."
           }
         ]
       }
@@ -199,50 +187,13 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (422):",
-          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"verification_code\": \"verification code is not valid.\", \n\t\t\t\"errors\": \"verification code is not valid.\"\n\t\t}\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"confirmation_token\": \"confirmation token is not valid.\", \n\t\t\t\"errors\": \"confirmation token is not valid.\"\n\t\t}\n}\n"
         }
       ]
     },
-  },
+  }
 
-  {
-    "type": "post",
-    "url": "/users/verify_code",
-    "title": "Code verification",
-    "name": "Code_Verification",
-    "description": "API will verify the Verification_Code.",
-    "group": "Login",
-    "version": "0.1.1",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "field": "verification_code",
-            "optional": false,
-            "description": "Provide the verification code"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response (200):",
-          "content": "{\n \"message\": \"ok\"\n}\n"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response (422):",
-          "content": "{\n\t \"errors\": \n\t\t { \n\t\t\t\"verification_code\": \"verification code is not valid.\"\n\t\t}\n}\n"
-        }
-      ]
-    },
-  },
+  
 
 
 ]});
