@@ -191,9 +191,237 @@ define({ api: [
         }
       ]
     },
+  },
+
+  {
+    "type": "post",
+    "url": "/users/sign_in",
+    "title": "Sign in",
+    "name": "User_signin",
+    "description": "API will sign in the user.",
+    "group": "Login",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[email]",
+            "optional": false,
+            "description": "Provide the email"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[password]",
+            "optional": false,
+            "description": "Provide the password"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\" \n}\n"
+        }
+      ]
+    },
+  },
+
+  {
+    "type": "post",
+    "url": "/profile",
+    "title": "create profile",
+    "name": "create_profile",
+    "description": "create user's profile.",
+    "group": "Profile",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[user_id]",
+            "optional": false,
+            "description": "<p>provide user_id of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[first_name]",
+            "optional": false,
+            "description": "<p>provide first name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[last_name]",
+            "optional": false,
+            "description": "<p>provide last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[dob]",
+            "optional": false,
+            "description": "<p>provide birthday of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[gender_id]",
+            "optional": false,
+            "description": "<p>provide id for gender of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[country_id]",
+            "optional": false,
+            "description": "<p>provide country id of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[city_id]",
+            "optional": false,
+            "description": "<p>provide city id of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[screen_name]",
+            "optional": false,
+            "description": "<p>provide screen name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[relationship_status_id]",
+            "optional": false,
+            "description": "<p>provide id for relationship status of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[education_info_id]",
+            "optional": false,
+            "description": "<p>provide education_info_id of the user</p>"
+          },
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (201):",
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
+        }
+      ]
+    },
+  },
+
+  {
+    "type": "post",
+    "url": "/interests",
+    "title": "create myinterests",
+    "name": "create_myinterests",
+    "description": "create user's interests.",
+    "group": "Interests",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[religion]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[pets]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[sports]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[politics]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[hobbies]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[music]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[movies]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "field": "interests[collecting]",
+            "optional": false,
+            "description": "<p>provide array of selected ids</p>"
+          },
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (201):",
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
+        }
+      ]
+    },
+  },
+  {
+    "type": "get",
+    "url": "/interests",
+    "title": "show myinterests",
+    "name": "get_myinterests",
+    "description": "create user's interests.",
+    "group": "Interests",
+    "version": "0.1.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"religion\"=> \"{{:name => \"hinduism\", :id => 1, :is_selected => true}, {:name => \"islam\", :id => 2, :is_selected => true}}\", \n\t \"pets\"=> \"{{:name => \"dog\", :id => 3, :is_selected => true}, {:name => \"cat\", :id => 4, :is_selected => false}}\"\n}\n"
+        }
+      ]
+    },
   }
 
   
-
 
 ]});
