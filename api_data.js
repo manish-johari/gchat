@@ -3,11 +3,11 @@ define({ api: [
   {
     "type": "post",
     "url": "/users/sign_up",
-    "title": "sign_up",
+    "title": "Sign up",
     "name": "Create_Account",
     "description": "API will create a user account.",
     "group": "Login",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -32,7 +32,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\":  2,  \n\t\"auth_token\": \"xyzabc\", \n\t \"is_confirmed\": false\n}"
+          "content": "{\n\t\"user_id\":  2,\n\t\"is_confirmed\": false\n}"
         }
       ]
     },
@@ -53,7 +53,7 @@ define({ api: [
     "name": "User_Login_From_Facebook",
     "description": "API will login the user from facebook.",
     "group": "Login",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -99,7 +99,7 @@ define({ api: [
     "name": "User_Logout",
     "description": "API will logout the user.",
     "group": "Login",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -130,7 +130,7 @@ define({ api: [
     "name": "User_Logout",
     "description": "API will logout the user.",
     "group": "Login",
-    "version": "0.1.1",
+    "version": "2",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -161,7 +161,7 @@ define({ api: [
     "name": "Confirm_Token",
     "description": "API will verify the confirmation token.",
     "group": "Login",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -200,7 +200,7 @@ define({ api: [
     "name": "User_signin",
     "description": "API will sign in the user.",
     "group": "Login",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -238,7 +238,7 @@ define({ api: [
     "name": "create_profile",
     "description": "create user's profile.",
     "group": "Profile",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -332,7 +332,7 @@ define({ api: [
     "name": "create_myinterests",
     "description": "create user's interests.",
     "group": "Interests",
-    "version": "0.1.0",
+    "version": "1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -411,7 +411,7 @@ define({ api: [
     "name": "get_myinterests",
     "description": "create user's interests.",
     "group": "Interests",
-    "version": "0.1.0",
+    "version": "1",
     "success": {
       "examples": [
         {
@@ -428,7 +428,7 @@ define({ api: [
     "name": "get_profile",
     "description": "Get user profile.",
     "group": "Profile",
-    "version": "0.1.0",
+    "version": "1",
     "success": {
       "examples": [
         {
