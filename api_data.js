@@ -420,8 +420,24 @@ define({ api: [
         }
       ]
     },
+  },
+  {
+    "type": "get",
+    "url": "/profile",
+    "title": "show profile",
+    "name": "get_profile",
+    "description": "Get user profile.",
+    "group": "Profile",
+    "version": "0.1.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"profile\"=> \"{:user_id => \"1\", :first_name => \"manish\"}\n}\n"
+        }
+      ]
+    },
   }
 
-  
 
 ]});
