@@ -32,7 +32,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\":  2,\n\t\"is_confirmed\": false\n}"
+          "content": "{\n\t\"user_id\":  2,\n\t\"is_confirmed\": false,\n\t\"auth_token\": \"xyzabc\" \n}"
         }
       ]
     },
@@ -40,7 +40,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error (409):",
-          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": \"Email has already been taken.\", \n\t\t\"errors\": \"Email has already been taken.\" \n\t}\n}"
+          "content": "{\n\t \"errors\" : \n\t {\n\t\t\"email\": \"Email has already been taken.\", \n\t\t\"errors\": \"Email has already been taken.\" \n\t}\n}"
         }
       ]
     },
@@ -171,6 +171,13 @@ define({ api: [
             "field": "confirmation_token",
             "optional": false,
             "description": "Provide the confirmation_token sent to user via email."
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the auth_token."
           }
         ]
       }
