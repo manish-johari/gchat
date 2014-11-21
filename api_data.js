@@ -39,7 +39,7 @@ define({ api: [
     "error": {
       "examples": [
         {
-          "title": "Error (409):",
+          "title": "Error (422):",
           "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": \"Email has already been taken.\", \n\t\t\"errors\": \"Email has already been taken.\" \n\t}\n}"
         }
       ]
@@ -48,7 +48,7 @@ define({ api: [
 
   {
     "type": "post",
-    "url": "/users/sign_in",
+    "url": "/users/sign_in/facebook",
     "title": "Connect with facebook",
     "name": "User_Login_From_Facebook",
     "description": "API will login the user from facebook.",
@@ -60,7 +60,7 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "fb_user_id",
+            "field": "provider_id",
             "optional": false,
             "description": "<p>Social Network ID via which user is connected.</p>"
           },
@@ -75,7 +75,7 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "fb_access_token",
+            "field": "access_token",
             "optional": false,
             "description": "<p>Provide the facebook access token</p>"
           },
@@ -155,8 +155,8 @@ define({ api: [
   },
 
   {
-    "type": "post",
-    "url": "/users/confirm_token",
+    "type": "get",
+    "url": "/users/confirmation",
     "title": "Confirm token",
     "name": "Confirm_Token",
     "description": "API will verify the confirmation token.",
