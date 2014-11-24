@@ -40,7 +40,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error (422):",
-          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": \"Email has already been taken.\", \n\t\t\"errors\": \"Email has already been taken.\" \n\t}\n}"
+          "content": "{\n\t \"errors\" : \n\t {\n\t\t \"email\": \"Email has already been taken.\", \n\t\t\"generic_errors\": \"Email has already been taken.\" \n\t}\n}"
         }
       ]
     },
@@ -194,7 +194,7 @@ define({ api: [
       "examples": [
         {
           "title": "Error-Response (422):",
-          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"confirmation_token\": \"confirmation token is not valid.\", \n\t\t\t\"errors\": \"confirmation token is not valid.\"\n\t\t}\n}\n"
+          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"confirmation_token\": \"confirmation token is not valid.\", \n\t\t\t\"generic_errors\": \"confirmation token is not valid.\"\n\t\t}\n}\n"
         }
       ]
     },
