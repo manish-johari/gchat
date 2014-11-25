@@ -252,13 +252,6 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[user_id]",
-            "optional": false,
-            "description": "<p>provide user_id of the user</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
             "field": "profile[first_name]",
             "optional": false,
             "description": "<p>provide first name of the user</p>"
@@ -280,30 +273,30 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[gender_id]",
+            "field": "profile[gender]",
             "optional": false,
-            "description": "<p>provide id for gender of the user</p>"
+            "description": "<p>provide gender of the user</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[country_id]",
+            "field": "profile[lat]",
             "optional": false,
-            "description": "<p>provide country id of the user</p>"
+            "description": "<p>provide latitude of a place or city.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[city_id]",
+            "field": "profile[long]",
             "optional": false,
-            "description": "<p>provide city id of the user</p>"
+            "description": "<p>provide longitude of a place or city.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[screen_name]",
+            "field": "profile[location]",
             "optional": false,
-            "description": "<p>provide screen name of the user</p>"
+            "description": "<p>provide location of the user</p>"
           },
           {
             "group": "Parameter",
@@ -319,6 +312,13 @@ define({ api: [
             "optional": false,
             "description": "<p>provide education_info_id of the user</p>"
           },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "<p>Provide authentication token of user.</p>"
+          }
         ]
       }
     },
@@ -444,7 +444,111 @@ define({ api: [
         }
       ]
     },
+  },
+
+  {
+    "type": "post",
+    "url": "/users/password",
+    "title": "Forgot password",
+    "name": "forgot_password",
+    "description": "Get token to reset password.",
+    "group": "Password",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[email]",
+            "optional": false,
+            "description": "<p>Provide email of the user.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t\"message\": \"You will receive an email with instructions on how to reset your password in a few minutes.\"\n}"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response (422)",
+          "content": "{\n\t\"errors\":\n\t\t{\n\t\t\t\"email\": \"Email not found\",\n\t\t\t\"generic_errors\": \"Email not found\"\n\t\t}\n}"
+        }
+      ]
+    }
+  },
+
+  {
+    "type": "put",
+    "url": "/users/password",
+    "title": "Update password",
+    "name": "update_password",
+    "description": "Update password.",
+    "group": "Password",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[password]",
+            "optional": false,
+            "description": "<p>Provide new password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[reset_password_token]",
+            "optional": false,
+            "description": "<p>Provide reset password token received on email.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t\"message\": \"Your password has been changed successfully.\"\n}"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response (422)",
+          "content": "{\n\t\"errors\":\n\t\t{\n\t\t\t\"reset_password_token\": \"Reset password token is invalid\",\n\t\t\t\"generic_errors\": \"Reset password token is invalid\"\n\t\t}\n}"
+        }
+      ]
+    }
+  },
+
+  {
+    "type": "get",
+    "url": "/languages",
+    "title": "Get languages",
+    "name": "get_languages",
+    "description": "Get all languages.",
+    "group": "Profile",
+    "version": "1",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t\"languages\": [{\"id\":1,\"name\":\"Arabic\",\"code\":\"ar\"},{\"id\":2,\"name\":\"Bulgarian\",\"code\":\"bg\"},{\"id\":3,\"name\":\"Catalan\",\"code\":\"ca\"},{\"id\":4,\"name\":\"Chinese (Simplified)\",\"code\":\"zh-CHS\"},{\"id\":5,\"name\":\"Chinese (Traditional)\",\"code\":\"zh-CHT\"},{\"id\":6,\"name\":\"Czech\",\"code\":\"cs\"},{\"id\":7,\"name\":\"Danish\",\"code\":\"da\"},{\"id\":8,\"name\":\"Dutch\",\"code\":\"nl\"},{\"id\":9,\"name\":\"English\",\"code\":\"en\"},{\"id\":10,\"name\":\"Estonian\",\"code\":\"et\"},{\"id\":12,\"name\":\"Finnish\",\"code\":\"fi\"},{\"id\":13,\"name\":\"French\",\"code\":\"fr\"},{\"id\":14,\"name\":\"German\",\"code\":\"de\"},{\"id\":15,\"name\":\"Greek\",\"code\":\"el\"},{\"id\":16,\"name\":\"Haitian Creole\",\"code\":\"ht\"},{\"id\":17,\"name\":\"Hebrew\",\"code\":\"he\"},{\"id\":18,\"name\":\"Hindi\",\"code\":\"hi\"},{\"id\":27,\"name\":\"Hmong Daw\",\"code\":\"mww\"},{\"id\":19,\"name\":\"Hungarian\",\"code\":\"hu\"},{\"id\":20,\"name\":\"Indonesian\",\"code\":\"id\"},{\"id\":21,\"name\":\"Italian\",\"code\":\"it\"},{\"id\":22,\"name\":\"Japanese\",\"code\":\"ja\"},{\"id\":23,\"name\":\"Korean\",\"code\":\"ko\"},{\"id\":24,\"name\":\"Latvian\",\"code\":\"lv\"},{\"id\":25,\"name\":\"Lithuanian\",\"code\":\"lt\"},{\"id\":26,\"name\":\"Malay\",\"code\":\"ms\"},{\"id\":28,\"name\":\"Norwegian\",\"code\":\"no\"},{\"id\":11,\"name\":\"Persian (Farsi)\",\"code\":\"fa\"},{\"id\":29,\"name\":\"Polish\",\"code\":\"pl\"},{\"id\":30,\"name\":\"Portuguese\",\"code\":\"pt\"},{\"id\":31,\"name\":\"Romanian\",\"code\":\"ro\"},{\"id\":32,\"name\":\"Russian\",\"code\":\"ru\"},{\"id\":33,\"name\":\"Slovak\",\"code\":\"sk\"},{\"id\":34,\"name\":\"Slovenian\",\"code\":\"sl\"},{\"id\":35,\"name\":\"Spanish\",\"code\":\"es\"},{\"id\":36,\"name\":\"Swedish\",\"code\":\"sv\"},{\"id\":37,\"name\":\"Thai\",\"code\":\"th\"},{\"id\":38,\"name\":\"Turkish\",\"code\":\"tr\"},{\"id\":39,\"name\":\"Ukrainian\",\"code\":\"uk\"},{\"id\":40,\"name\":\"Urdu\",\"code\":\"ur\"},{\"id\":41,\"name\":\"Vietnamese\",\"code\":\"vi\"}]\n}"
+        }
+      ]
+    },
   }
+
 
 
 ]});
