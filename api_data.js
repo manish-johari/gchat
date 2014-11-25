@@ -547,6 +547,24 @@ define({ api: [
         }
       ]
     },
+  },
+
+  {
+    "type": "get",
+    "url": "/educations",
+    "title": "Get educations",
+    "name": "get_educations",
+    "description": "Get all educations.",
+    "group": "Profile",
+    "version": "1",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t\"educations\": [{\"id\":1,\"name\":\"Elementary\"},{\"id\":2,\"name\":\"Middle or Junior High\"},{\"id\":3,\"name\":\"High School\"},{\"id\":4,\"name\":\"College/University\"}]\n}"
+        }
+      ]
+    },
   }
 
 
