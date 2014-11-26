@@ -72,6 +72,13 @@ define({ api: [
             "defaultValue": "facebook",
             "description": "<p>Social Network via which user is connected.</p>"
           },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "access_token",
+            "optional": false,
+            "description": "<p>Provide the facebook access token</p>"
+          },
         ],
       }
     },
