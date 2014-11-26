@@ -72,13 +72,6 @@ define({ api: [
             "defaultValue": "facebook",
             "description": "<p>Social Network via which user is connected.</p>"
           },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "access_token",
-            "optional": false,
-            "description": "<p>Provide the facebook access token</p>"
-          },
         ],
       }
     },
@@ -268,14 +261,14 @@ define({ api: [
             "type": "String",
             "field": "profile[dob]",
             "optional": false,
-            "description": "<p>provide birthday of the user</p>"
+            "description": "<p>provide birthday of the user</p> Format : <b>YYYY/DD/MM</b>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "profile[gender]",
             "optional": false,
-            "description": "<p>provide gender of the user</p>"
+            "description": "<p>provide gender of the user <b>'M' or 'F'</b></p>"
           },
           {
             "group": "Parameter",
@@ -301,16 +294,23 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[relationship_status_id]",
+            "field": "profile[language_id]",
             "optional": false,
+            "description": "<p>provide id of language selected by user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "profile[relationship_id]",
+            "optional": true,
             "description": "<p>provide id for relationship status of the user</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[education_info_id]",
-            "optional": false,
-            "description": "<p>provide education_info_id of the user</p>"
+            "field": "profile[education_id]",
+            "optional": true,
+            "description": "<p>provide education_id of the user</p>"
           },
           {
             "group": "Parameter",
@@ -424,23 +424,6 @@ define({ api: [
         {
           "title": "Success-Response (200):",
           "content": "{\n\t \"religion\"=> \"{{:name => \"hinduism\", :id => 1, :is_selected => true}, {:name => \"islam\", :id => 2, :is_selected => true}}\", \n\t \"pets\"=> \"{{:name => \"dog\", :id => 3, :is_selected => true}, {:name => \"cat\", :id => 4, :is_selected => false}}\"\n}\n"
-        }
-      ]
-    },
-  },
-  {
-    "type": "get",
-    "url": "/profile",
-    "title": "show profile",
-    "name": "get_profile",
-    "description": "Get user profile.",
-    "group": "Profile",
-    "version": "1",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response (200):",
-          "content": "{\n\t \"profile\"=> \"{:user_id => \"1\", :first_name => \"manish\"}\n}\n"
         }
       ]
     },
@@ -562,6 +545,24 @@ define({ api: [
         {
           "title": "Success-Response (200):",
           "content": "{\n\t\"educations\": [{\"id\":1,\"name\":\"Elementary\"},{\"id\":2,\"name\":\"Middle or Junior High\"},{\"id\":3,\"name\":\"High School\"},{\"id\":4,\"name\":\"College/University\"}]\n}"
+        }
+      ]
+    },
+  },
+
+  {
+    "type": "get",
+    "url": "/relationships",
+    "title": "Get relationships",
+    "name": "get_relationships",
+    "description": "Get all relationships.",
+    "group": "Profile",
+    "version": "1",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t\"relationships\": [{\"id\":1,\"name\":\"Single\"},{\"id\":2,\"name\":\"Married\"},{\"id\":3,\"name\":\"In Relationship\"},{\"id\":4,\"name\":\"Divorced\"},{\"id\":5,\"name\":\"Separated\"},{\"id\":6,\"name\":\"Engaged\"},{\"id\":7,\"name\":\"It's Complicated\"}]\n}"
         }
       ]
     },
