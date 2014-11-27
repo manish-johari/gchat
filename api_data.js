@@ -86,7 +86,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true, \n\t\"provider\": true, \n\t\"has_basic_profile\": false\n}\n"
+          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true, \n\t\"provider\": true, \n\t\"has_basic_profile\": false, \n\t\"system_generated_password\": false \n}\n"
         }
       ]
     },
@@ -232,7 +232,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\", \n\t\"provider\": true, \n\t\"has_basic_profile\": false \n}\n"
+          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\", \n\t\"provider\": true, \n\t\"has_basic_profile\": false,  \n\t\"system_generated_password\": false\n}\n"
         }
       ]
     },
@@ -448,7 +448,7 @@ define({ api: [
     "url": "/users/password",
     "title": "Forgot password",
     "name": "forgot_password",
-    "description": "Get token to reset password.",
+    "description": "Receive system generated password password on email.",
     "group": "Password",
     "version": "1",
     "parameter": {
@@ -477,52 +477,6 @@ define({ api: [
         {
           "title": "Error-Response (422)",
           "content": "{\n\t\"errors\":\n\t\t{\n\t\t\t\"email\": \"Email not found\",\n\t\t\t\"generic_errors\": \"Email not found\"\n\t\t}\n}"
-        }
-      ]
-    }
-  },
-
-  {
-    "type": "put",
-    "url": "/users/password",
-    "title": "Update password",
-    "name": "update_password",
-    "description": "Update password.",
-    "group": "Password",
-    "version": "1",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "user[password]",
-            "optional": false,
-            "description": "<p>Provide new password.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "field": "user[reset_password_token]",
-            "optional": false,
-            "description": "<p>Provide reset password token received on email.</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response (200):",
-          "content": "{\n\t\"message\": \"Your password has been changed successfully.\"\n}"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response (422)",
-          "content": "{\n\t\"errors\":\n\t\t{\n\t\t\t\"reset_password_token\": \"Reset password token is invalid\",\n\t\t\t\"generic_errors\": \"Reset password token is invalid\"\n\t\t}\n}"
         }
       ]
     }
