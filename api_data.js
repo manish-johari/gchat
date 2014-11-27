@@ -86,7 +86,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true\n}\n"
+          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true, \n\t\"provider\": true, \n\t\"has_basic_profile\": false\n}\n"
         }
       ]
     },
@@ -232,7 +232,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\" \n}\n"
+          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\", \n\t\"provider\": true, \n\t\"has_basic_profile\": false \n}\n"
         }
       ]
     },
@@ -266,9 +266,9 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "profile[dob]",
+            "field": "profile[birthdate]",
             "optional": false,
-            "description": "<p>provide birthday of the user</p> Format : <b>YYYY/DD/MM</b>"
+            "description": "<p>provide birthdate of the user</p> Format : <b>YYYY/MM/DD</b>"
           },
           {
             "group": "Parameter",
@@ -321,10 +321,17 @@ define({ api: [
           },
           {
             "group": "Parameter",
+            "type": "File",
+            "field": "profile[profile_images_attributes][][media]",
+            "optional": true,
+            "description": "<p>provide profile image of the user</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "String",
             "field": "auth_token",
             "optional": false,
-            "description": "<p>Provide authentication token of user.</p>"
+            "description": "<p>provide authentication token of user.</p>"
           }
         ]
       }
