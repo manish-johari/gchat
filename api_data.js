@@ -534,7 +534,56 @@ define({ api: [
         }
       ]
     },
-  }
+  },
+
+
+  {
+    "type": "post",
+    "url": "/users/confirmation",
+    "title": "Get Confirmation token",
+    "name": "Get_Confirmation_Token",
+    "description": "API will send the confirmation token.",
+    "group": "Login",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "Provide the email of user."
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the auth_token."
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"message\": \"You will receive an email with instructions for how to confirm your email address in a few minutes.\"\n}\n"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response (422):",
+          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"email\": \"Email was already confirmed, please try signing in.\", \n\t\t\t\"generic_errors\": \"Email was already confirmed, please try signing in.\"\n\t\t}\n}\n"
+        }
+      ]
+    },
+  },
+
+
 
 
 
