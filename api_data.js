@@ -540,8 +540,8 @@ define({ api: [
   {
     "type": "post",
     "url": "/users/confirmation",
-    "title": "Get Confirmation token",
-    "name": "Get_Confirmation_Token",
+    "title": "Send Confirmation token",
+    "name": "send_Confirmation_Token",
     "description": "API will send the confirmation token.",
     "group": "Login",
     "version": "1",
