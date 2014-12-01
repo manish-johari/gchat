@@ -583,7 +583,51 @@ define({ api: [
     },
   },
 
-
+  {
+    "type": "delete",
+    "url": "/users/destroy",
+    "title": "Delete User",
+    "name": "delete_user",
+    "description": "API will delete user",
+    "group": "Login",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[email]",
+            "optional": false,
+            "description": "Provide the email of user."
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[password]",
+            "optional": false,
+            "description": "Provide the password."
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"message\": \"User deleted successfully.\"\n}\n"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response (422):",
+          "content": "{\n\t \"errors\": \n\t\t {\n\t\t\t\"generic_errors\": \"Invalid User details.\"\n\t\t}\n}\n"
+        }
+      ]
+    },
+  },
 
 
 
