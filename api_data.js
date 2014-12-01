@@ -551,7 +551,7 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "email",
+            "field": "user[email]",
             "optional": false,
             "description": "Provide the email of user."
           },
