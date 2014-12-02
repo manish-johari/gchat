@@ -551,13 +551,6 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "user[email]",
-            "optional": false,
-            "description": "Provide the email of user."
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
             "field": "auth_token",
             "optional": false,
             "description": "Provide the auth_token."
