@@ -622,6 +622,37 @@ define({ api: [
     },
   },
 
+  {
+    "type": "put",
+    "url": "/users/deactivate",
+    "title": "Deactivate User",
+    "name": "deactivate_user",
+    "description": "API will deactivate user",
+    "group": "Settings",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the auth_token."
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"message\": \"ok\"\n}\n"
+        }
+      ]
+    },
+  },
+
 
 
 ]});
