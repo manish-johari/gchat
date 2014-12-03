@@ -349,7 +349,7 @@ define({ api: [
   {
     "type": "post",
     "url": "/interests",
-    "title": "create myinterests",
+    "title": "Create Interests",
     "name": "create_myinterests",
     "description": "create user's interests.",
     "group": "Interests",
@@ -357,13 +357,6 @@ define({ api: [
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Array",
-            "field": "interests[religion]",
-            "optional": false,
-            "description": "<p>provide array of selected ids</p>"
-          },
           {
             "group": "Parameter",
             "type": "Array",
@@ -421,23 +414,6 @@ define({ api: [
         {
           "title": "Success-Response (201):",
           "content": "{\n\t \"message\": \"ok\"\n}\n"
-        }
-      ]
-    },
-  },
-  {
-    "type": "get",
-    "url": "/interests",
-    "title": "show myinterests",
-    "name": "get_myinterests",
-    "description": "create user's interests.",
-    "group": "Interests",
-    "version": "1",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response (200):",
-          "content": "{\n\t \"religion\"=> \"{{:name => \"hinduism\", :id => 1, :is_selected => true}, {:name => \"islam\", :id => 2, :is_selected => true}}\", \n\t \"pets\"=> \"{{:name => \"dog\", :id => 3, :is_selected => true}, {:name => \"cat\", :id => 4, :is_selected => false}}\"\n}\n"
         }
       ]
     },
@@ -653,6 +629,23 @@ define({ api: [
     },
   },
 
+  {
+    "type": "get",
+    "url": "/pets",
+    "title": "Get Pets",
+    "name": "get_pets",
+    "description": "Show pets data.",
+    "group": "Interests",
+    "version": "1",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"pets\": [{\"id\":1,\"name\":\"Bird\"},{\"id\":2,\"name\":\"Cat\"},{\"id\":3,\"name\":\"Chicken\"},{\"id\":4,\"name\":\"Chinchilla\"},{\"id\":5,\"name\":\"Cow\"},{\"id\":6,\"name\":\"Dog\"},{\"id\":8,\"name\":\"Ferret\"},{\"id\":7,\"name\":\"Fish\"},{\"id\":9,\"name\":\"Frog\"},{\"id\":10,\"name\":\"Gerbil\"},{\"id\":11,\"name\":\"Guinea Pig\"},{\"id\":12,\"name\":\"Hamster\"},{\"id\":13,\"name\":\"Hermit Crab\"},{\"id\":14,\"name\":\"Horse\"},{\"id\":15,\"name\":\"Monkey\"},{\"id\":16,\"name\":\"Rabbit\"},{\"id\":17,\"name\":\"Rat\"},{\"id\":18,\"name\":\"Rooster\"},{\"id\":19,\"name\":\"Snake\"},{\"id\":20,\"name\":\"Spider\"},{\"id\":21,\"name\":\"Turtle\"}]\n}\n"
+        }
+      ]
+    },
+  },
 
 
 ]});
