@@ -275,7 +275,7 @@ define({ api: [
             "type": "String",
             "field": "profile[gender]",
             "optional": false,
-            "description": "<p>provide gender of the user <b>'M' or 'F'</b></p>"
+            "description": "<p>provide gender of the user <b>'m' or 'f'</b></p>"
           },
           {
             "group": "Parameter",
