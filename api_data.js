@@ -475,7 +475,7 @@ define({ api: [
     "success": {
       "examples": [
         {
-          "title": "Success-Response (201):",
+          "title": "Success-Response (200):",
           "content": "{\n\t \"collectings\":[1,2,3,4],\"hobbies\":[1,2,3,4],\"movies\":[1,2,3,4],\"music\":[1,2,3,4],\"pets\":[1,2,3,4],\"political_views\":[1,2,3,4],\"sports\":[1,2,3,4]\n}\n"
         }
       ]
