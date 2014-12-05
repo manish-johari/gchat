@@ -469,6 +469,13 @@ define({ api: [
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "<p>provide auth_token. </p>"
+          },
         ]
       }
     },
