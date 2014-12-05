@@ -338,14 +338,14 @@ define({ api: [
             "type": "String",
             "field": "profile[boy]",
             "optional": true,
-            "description": "<p>provide number eg. 2</p>"
+            "description": "<p>provide number eg. 2, (for 9+ provide `10`)</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "field": "profile[girl]",
             "optional": true,
-            "description": "<p>number eg. 2</p>"
+            "description": "<p>number eg. 2, (for 9+ provide `10`)</p>"
           },
           {
             "group": "Parameter",
@@ -422,52 +422,52 @@ define({ api: [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Array",
-            "field": "interests[pets]",
+            "type": "String",
+            "field": "interests[collectings]",
             "optional": false,
-            "description": "<p>provide array of selected ids</p>"
+            "description": "<p>provide selected ids. eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
-            "type": "Array",
-            "field": "interests[sports]",
-            "optional": false,
-            "description": "<p>provide array of selected ids</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Array",
-            "field": "interests[politics]",
-            "optional": false,
-            "description": "<p>provide array of selected ids</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Array",
+            "type": "String",
             "field": "interests[hobbies]",
             "optional": false,
-            "description": "<p>provide array of selected ids</p>"
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
-            "type": "Array",
-            "field": "interests[music]",
-            "optional": false,
-            "description": "<p>provide array of selected ids</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Array",
+            "type": "String",
             "field": "interests[movies]",
             "optional": false,
-            "description": "<p>provide array of selected ids</p>"
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
-            "type": "Array",
-            "field": "interests[collecting]",
+            "type": "String",
+            "field": "interests[music]",
             "optional": false,
-            "description": "<p>provide array of selected ids</p>"
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "interests[pets]",
+            "optional": false,
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "interests[political_views]",
+            "optional": false,
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "interests[sports]",
+            "optional": false,
+            "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
         ]
       }
@@ -476,7 +476,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (201):",
-          "content": "{\n\t \"message\": \"ok\"\n}\n"
+          "content": "{\n\t \"collectings\":[1,2,3,4],\"hobbies\":[1,2,3,4],\"movies\":[1,2,3,4],\"music\":[1,2,3,4],\"pets\":[1,2,3,4],\"political_views\":[1,2,3,4],\"sports\":[1,2,3,4]\n}\n"
         }
       ]
     },
