@@ -423,49 +423,49 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[collectings]",
+            "field": "interest[collectings]",
             "optional": false,
             "description": "<p>provide selected ids. eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[hobbies]",
+            "field": "interest[hobbies]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[movies]",
+            "field": "interest[movies]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[music]",
+            "field": "interest[music]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[pets]",
+            "field": "interest[pets]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[political_views]",
+            "field": "interest[political_views]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
-            "field": "interests[sports]",
+            "field": "interest[sports]",
             "optional": false,
             "description": "<p>provide selected ids eg. 1,2,3,4</p>"
           },
