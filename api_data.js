@@ -86,7 +86,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success (201):",
-          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true, \n\t\"provider\": true, \n\t\"has_basic_profile\": false, \n\t\"system_generated_password\": false \n}\n"
+          "content": "{\n\t\"user_id\": 1, \n\t\"auth_token\": \"xyzabc\", \n\t\"is_confirmed\": true, \n\t\"provider_facebook\": true, \n\t\"has_basic_profile\": false, \n\t\"system_generated_password\": false \n}\n"
         }
       ]
     },
@@ -232,7 +232,7 @@ define({ api: [
       "examples": [
         {
           "title": "Success-Response (200):",
-          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\", \n\t\"provider\": true, \n\t\"has_basic_profile\": false,  \n\t\"system_generated_password\": false\n}\n"
+          "content": "{\n\t \"user_id\": \"2\"\n\t \"is_confirmed\": true \n\t \"auth_token\":\"A8xfUFZyWoLRzvmgFqe8\", \n\t\"provider_facebook\": false, \n\t\"has_basic_profile\": false,  \n\t\"system_generated_password\": false\n}\n"
         }
       ]
     },
