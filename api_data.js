@@ -738,9 +738,9 @@ define({ api: [
   {
     "type": "put",
     "url": "/users/password",
-    "title": "Update password",
-    "name": "update_password",
-    "description": "Manage password.",
+    "title": "Change password",
+    "name": "change_password",
+    "description": "Change password.",
     "group": "Settings",
     "version": "1",
     "parameter": {
