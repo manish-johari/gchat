@@ -735,5 +735,50 @@ define({ api: [
     },
   },
 
+  {
+    "type": "put",
+    "url": "/users/password",
+    "title": "Update password",
+    "name": "update_password",
+    "description": "Manage password.",
+    "group": "Settings",
+    "version": "1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[current_password]",
+            "optional": false,
+            "description": "Provide the current password."
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "user[password]",
+            "optional": false,
+            "description": "Provide the new password."
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "auth_token",
+            "optional": false,
+            "description": "Provide the auth_token."
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response (200):",
+          "content": "{\n\t \"message\":\"ok\"\n}\n"
+        }
+      ]
+    },
+  },
+
 
 ]});
